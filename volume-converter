@@ -1,0 +1,29 @@
+﻿# volume-converter
+def convert_volume(value, from_unit, to_unit):
+    units = {
+        'mm3': 0.000001,  # Кубічний міліметр
+        'cm3': 0.001,     # Кубічний сантиметр
+        'ml': 1,          # Мілілітр
+        'dm3': 1000,      # Кубічний дециметр
+        'l': 1000,        # Літр
+        'dal': 10000,     # Декалітр
+        'hl': 100000,     # Гектолітр
+        'm3': 1000000,    # Кубічний метр
+        'nl': 0.000001,  # Нанолітр
+        'mikrol': 0.001,  # Мікролітр
+        'gal': 3785.41,   # Американський галон
+        'barrel': 158987, # Барель
+    }
+
+    if from_unit not in units or to_unit not in units:
+        return 'Невірна одиниця виміру'
+
+    return value * units[from_unit] / units[to_unit]
+
+value = float(input('Введіть значення: '))
+from_unit = input('Введіть початкову одиницю (mm3, cm3, ml, dm3, l, dal, hl, m3, nl, mikrol, gal, barrel): ')
+to_unit = input('Введіть кінцеву одиницю (mm3, cm3, ml, dm3, l, dal, hl, m3, nl, mikrol, gal, barrel): ')
+
+result = convert_volume(value, from_unit, to_unit)
+
+print(f'{value} {from_unit} = {result} {to_unit}')
