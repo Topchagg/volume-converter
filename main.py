@@ -7,15 +7,12 @@ def changeUnits(*args):
     units2["values"] = units[converters.get()]
 
 def convert():
-    con = VolumeConverter()
     number = float(entry.get())
-    unit1 = units1.get()
-    unit2 = units2.get()
-    number *= con.convert(unit1, unit2)
+    number *= VolumeConverter.convert(units1.get(), units2.get())
     result["text"] = number
 
 units = {
-    "Balk": [],
+    "Balk": ['mm3', 'cm3', 'dm3', 'm3', 'bushel', 'peck', 'quart'],
     "Liquid": []
 }
 root = Tk()
