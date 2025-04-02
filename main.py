@@ -15,7 +15,7 @@ def convert():
     result["text"] = number
 
 units = {
-    "Dry": [],
+    "Balk": [],
     "Liquid": []
 }
 root = Tk()
